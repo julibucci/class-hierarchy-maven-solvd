@@ -4,31 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8cb68f72-8ada-43d6-b281-c88ad2185c19" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/classes/Airplane.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/classes/Bicycle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/classes/Boat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/classes/Bus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/classes/Car.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/classes/CustomLinkedList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/classes/ElectricScooter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/classes/Helicopter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/classes/Motorcycle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/classes/Truck.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/classes/Vehicle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/classes/VehicleFileManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/exceptions/ExceedingMaxSpeedException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/exceptions/ExceedingPassengerCapacityException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/exceptions/InvalidYearException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/exceptions/NegativeAttributeException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/exceptions/UnsupportedFuelTypeException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/interfaces/Convertible.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/interfaces/Electric.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/interfaces/Flyable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/interfaces/Pedalable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/interfaces/Transportable.java" afterDir="false" />
+    <list default="true" id="8cb68f72-8ada-43d6-b281-c88ad2185c19" name="Changes" comment="Add interfaces,classes and exceptions">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,17 +56,19 @@
       <option name="presentableId" value="Default" />
       <updated>1725285558233</updated>
     </task>
+    <task id="LOCAL-00001" summary="Add interfaces,classes and exceptions">
+      <option name="closed" value="true" />
+      <created>1725296805356</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1725296805356</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Main.java</url>
-          <line>13</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add interfaces,classes and exceptions" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add interfaces,classes and exceptions" />
   </component>
 </project>
