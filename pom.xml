@@ -27,4 +27,26 @@
         </dependency>
     </dependencies>
 
+    // Maven Compiler Plugin-->This plugin helps you specify the Java version for compiling your code
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>20</source>
+                    <target>20</target>
+                </configuration>
+            </plugin>
+
+            // Maven Surefire Plugin --> This plugin is used to run unit tests
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.1.2</version>
+            </plugin>
+        </plugins>
+    </build>
+
 </project>

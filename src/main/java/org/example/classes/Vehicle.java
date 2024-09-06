@@ -49,7 +49,10 @@ public abstract class Vehicle
         return year;
     }
 
-    public void setYear(int year) {
+    public void setYear(int year) throws InvalidYearException {
+        if (year > MAX_YEAR) {
+            throw new InvalidYearException("Year cannot exceed " + MAX_YEAR);
+        }
         this.year = year;
     }
 
