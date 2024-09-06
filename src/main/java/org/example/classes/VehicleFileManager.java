@@ -25,4 +25,12 @@ public class VehicleFileManager
             System.out.println("An error occurred while reading the file: " + e.getMessage());
         }
     }
+
+    // Method to count unique words in a file
+    public void countWordsInVehicleDetails(String filePath)
+    {
+        WordCount wordCountManager = new WordCount();
+        String resultFilePath = filePath.replace(".txt", "_word_count.txt");
+        wordCountManager.countUniqueWordsInFile(filePath, resultFilePath);
+    }
 }

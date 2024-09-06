@@ -29,6 +29,7 @@ public class Main {
         Vehicle motorcycle = null;
 
         VehicleFileManager fileManager = new VehicleFileManager();
+        WordCount wordCount = new WordCount();  // Instancia de WordCount
 
         try {
             CustomLinkedList<String> airplanePassengers = new CustomLinkedList<>();
@@ -63,6 +64,13 @@ public class Main {
             fileManager.saveVehicleDetails(helicopter, "helicopter_details.txt");
             fileManager.saveVehicleDetails(truck, "truck_details.txt");
             fileManager.saveVehicleDetails(motorcycle, "motorcycle_details.txt");
+
+            // Contar palabras en los archivos de detalles de vehículos
+            wordCount.countUniqueWordsInFile("airplane_details.txt", "airplane_details_word_count.txt");
+            wordCount.countUniqueWordsInFile("bus_details.txt", "bus_details_word_count.txt");
+            wordCount.countUniqueWordsInFile("helicopter_details.txt", "helicopter_details_word_count.txt");
+            wordCount.countUniqueWordsInFile("truck_details.txt", "truck_details_word_count.txt");
+            wordCount.countUniqueWordsInFile("motorcycle_details.txt", "motorcycle_details_word_count.txt");
 
             // Cargar detalles de vehiculos desde archivos
             fileManager.loadVehicleDetails("airplane_details.txt");
