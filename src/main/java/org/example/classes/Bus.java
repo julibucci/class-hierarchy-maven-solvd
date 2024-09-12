@@ -11,13 +11,15 @@ public class Bus extends Vehicle
     private int numberOfDoors;
     private String fuelType;
     private ArrayList<String> routes;
+    private int passengerCapacity;
 
-    public Bus(String brand, String model, int year, int seatingCapacity, int numberOfDoors, String fuelType, CustomLinkedList<String> routes) throws InvalidYearException {
+    public Bus(String brand, String model, int year, int seatingCapacity, int numberOfDoors, String fuelType, CustomLinkedList<String> routes,int passengerCapacity) throws InvalidYearException {
         super(brand, model, year);
         this.seatingCapacity = seatingCapacity;
         this.numberOfDoors = numberOfDoors;
         this.fuelType = fuelType;
         this.routes = new ArrayList<>();
+        this.passengerCapacity = passengerCapacity;
     }
 
     public int getSeatingCapacity() {
@@ -46,6 +48,13 @@ public class Bus extends Vehicle
 
     public void setRoutes(ArrayList<String> routes) {
         this.routes = routes;
+    }
+    public int getPassengerCapacity() {
+        return passengerCapacity;
+    }
+
+    public void setPassengerCapacity(int passengerCapacity) {
+        this.passengerCapacity = passengerCapacity;
     }
 
     @Override
