@@ -1,5 +1,7 @@
 package org.example;
 
+import java.util.function.*;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -17,7 +19,7 @@ public class Main {
     public static Logger logger;
     public static void main(String[] args) {
 
-        // Configuracion del logger
+        // Configuration of logger
         File log4j2File = new File("C:\\Users\\julie\\OneDrive\\Escritorio\\Exercises - Solvd\\class hierarchy- solvd\\src\\resources\\log4j2.properties");
         System.setProperty("log4j2.configurationFile", log4j2File.toURI().toString());
         logger = LogManager.getLogger(Main.class);
@@ -37,10 +39,19 @@ public class Main {
             airplanePassengers.add("Jane Smith");
             airplane = new Airplane("Boeing", "747", 2022, 35000, 900, "Jet Fuel", airplanePassengers);
 
+            // Supplier<String> --> Provides the model of the airplane without any input parameters.
+            Vehicle finalAirplane = airplane;
+            Supplier<String> airplaneModelSupplier = () -> finalAirplane.getModel();
+            System.out.println("Airplane model: " + airplaneModelSupplier.get());
+
             CustomLinkedList<String> busRoutes = new CustomLinkedList<>();
             busRoutes.add("Route 1");
             busRoutes.add("Route 2");
-            bus = new Bus("Volvo", "B11R", 2021, 50, 2, "Diesel", busRoutes);
+            bus = new Bus("Volvo", "B11R", 2021, 50, 2, "Diesel", busRoutes,100);
+
+            // Predicate<Vehicle> --> Evaluates if the bus has a capacity greater than 40.
+            Predicate<Vehicle> busCapacityCheck = v -> ((Bus) v).getPassengerCapacity() > 40;
+            System.out.println("Bus has high capacity: " + busCapacityCheck.test(bus));
 
             LinkedList<String> helicopterMaintenanceTasks = new LinkedList<>();
             helicopterMaintenanceTasks.add("Check rotor blades");
@@ -48,17 +59,29 @@ public class Main {
 
             helicopter = new Helicopter("Bell", "407", 2019, 1000, 6, 15000, "Aviation Gasoline", false, helicopterMaintenanceTasks);
 
+            // Consumer<Vehicle> --> Prints the details of the helicopter.
+            Consumer<Vehicle> printHelicopterDetails = h -> System.out.println(h.toString());
+            printHelicopterDetails.accept(helicopter);
+
             HashMap<String, Integer> initialCargo = new HashMap<>();
             initialCargo.put("Electronics", 500);
             initialCargo.put("Furniture", 200);
             truck = new Truck("Scania", "R450", 2020, 10000, 4, true, "Diesel", 2, initialCargo);
+
+            // BiFunction<Integer, Integer, Integer>--> Calculates the total weight of the truck and its cargo.
+            BiFunction<Integer, Integer, Integer> calculateTotalWeight = (truckWeight, cargoWeight) -> truckWeight + cargoWeight;
+            System.out.println("Total truck weight: " + calculateTotalWeight.apply(10000, 500));
 
             ArrayList<String> initialAccessories = new ArrayList<>();
             initialAccessories.add("Saddlebags");
             initialAccessories.add("GPS");
             motorcycle = new Motorcycle("Harley-Davidson", "Street 750", 2018, 750, "Cruiser", true, "Black", true, initialAccessories);
 
-            // Guardar detalles de vehiculos en archivos
+            // Function<Vehicle, String> --> Returns a description of the vehicle.
+            Function<Vehicle, String> getVehicleDescription = v -> "Vehicle: " + v.getBrand() + " " + v.getModel() + " (" + v.getYear() + ")";
+            System.out.println(getVehicleDescription.apply(motorcycle));
+
+            // Guardar detalles de vehículos en archivos
             fileManager.saveVehicleDetails(airplane, "airplane_details.txt");
             fileManager.saveVehicleDetails(bus, "bus_details.txt");
             fileManager.saveVehicleDetails(helicopter, "helicopter_details.txt");
@@ -72,7 +95,7 @@ public class Main {
             wordCount.countUniqueWordsInFile("truck_details.txt", "truck_details_word_count.txt");
             wordCount.countUniqueWordsInFile("motorcycle_details.txt", "motorcycle_details_word_count.txt");
 
-            // Cargar detalles de vehiculos desde archivos
+            // Cargar detalles de vehículos desde archivos
             fileManager.loadVehicleDetails("airplane_details.txt");
             fileManager.loadVehicleDetails("bus_details.txt");
             fileManager.loadVehicleDetails("helicopter_details.txt");
@@ -86,5 +109,6 @@ public class Main {
         } catch (Exception e) {
             logger.error("An unexpected error occurred: " + e.getMessage(), e);
         }
+
     }
 }
