@@ -4,6 +4,9 @@ import org.apache.logging.log4j.Logger;
 import org.example.exceptions.InvalidYearException;
 
 import org.example.interfaces.Pedalable;
+
+import java.util.List;
+import java.util.stream.Collectors;
 public class Bicycle extends Vehicle implements Pedalable
 {
     // Attributes
@@ -94,5 +97,14 @@ public class Bicycle extends Vehicle implements Pedalable
         logger.info("Applying the bicycle brake.");
     }
 
+    // 4.Filters bicycles with more than 5 gears, maps them to text descriptions and then prints those descriptions.
+    public static void processBicycles(List<Bicycle> bicycles) {
+        List<String> descriptions = bicycles.stream()
+                .filter(b -> b.getNumberOfGears() > 5)
+                .map(b -> "Bicycle: " + b.getBrand() + " " + b.getModel() + ", Gears: " + b.getNumberOfGears()) // Map to descriptions (NonTOp)
+                .collect(Collectors.toList()); // Collect results into a list (TO)
+
+        descriptions.forEach(description -> logger.info(description));
+    }
 
 }
