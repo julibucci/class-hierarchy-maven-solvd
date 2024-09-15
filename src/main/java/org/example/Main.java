@@ -8,12 +8,9 @@ import org.example.classes.*;
 import org.example.exceptions.InvalidYearException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
+import java.util.stream.Collectors;
 import java.io.File;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.*;
 import java.util.function.*;
 import org.example.interfaces.Electric;
 
@@ -41,7 +38,7 @@ public class Main {
             FuelType truckFuelType = FuelType.DIESEL;
             HelicopterType helicopterType = HelicopterType.COMMERCIAL;
 
-            CustomLinkedList<String> airplanePassengers = new CustomLinkedList<>();
+            HashSet<String> airplanePassengers = new HashSet<>();
             airplanePassengers.add("John Doe");
             airplanePassengers.add("Jane Smith");
             airplane = new Airplane("Boeing", "747", 2022, 35000, 900, "Jet Fuel", airplanePassengers);
@@ -137,6 +134,71 @@ public class Main {
             fileManager.loadVehicleDetails("truck_details.txt");
             fileManager.loadVehicleDetails("motorcycle_details.txt");
             fileManager.loadVehicleDetails("boat_details.txt");
+
+            // Collection streaming
+            HashSet<String> airplanePassengerSet = new HashSet<>();
+            airplanePassengerSet.add("Taylor Swift");
+            airplanePassengerSet.add("Olivia Rodrigo");
+            airplanePassengerSet.add("Brad Pitt");
+
+            Airplane airplane1 = new Airplane("Boeing", "747", 2022, 35000, 900, "Jet Fuel", airplanePassengerSet);
+
+            //1. Llamar al metodo para imprimir los pasajeros en mayusculas
+            airplane1.printPassengersInUpperCase(); // Casting necesario
+
+            //2. Filter and collect high capacity trucks (Terminal operation)
+            List<Truck> trucks = Arrays.asList(
+                    new Truck("Volvo", "FH", 2019, 12000, 3, FuelType.DIESEL, new HashMap<>()),
+                    new Truck("Mercedes", "Actros", 2021, 15000, 2, FuelType.DIESEL, new HashMap<>())
+            );
+
+            List<Truck> highCapacityTrucks = trucks.stream()
+                    .filter(t -> t.getLoadCapacity() > 10000) // Intermediate operation
+                    .collect(Collectors.toList()); // Terminal operation
+            highCapacityTrucks.forEach(t -> logger.info("High capacity truck: " + t.getModel()));
+
+            // 3. Find average passenger capacity of buses (Terminal operation)
+            List<Bus> buses = Arrays.asList(
+                    new Bus("Mercedes", "Citaro", 2020, 60, 2, "Diesel", new CustomLinkedList<>(), 100),
+                    new Bus("Volvo", "7700", 2021, 70, 3, "Diesel", new CustomLinkedList<>(), 120)
+            );
+
+            double averageBusCapacity = buses.stream()
+                    .mapToInt(Bus::getPassengerCapacity) // Intermediate operation
+                    .average() // Terminal operation
+                    .orElse(0);
+            logger.info("Average bus passenger capacity: " + averageBusCapacity);
+
+            //4.
+            List<Bicycle> bicycles = Arrays.asList(
+                    new Bicycle("Giant", "Defy", 2021, true, 11, "Road", true, "Aluminum"),
+                    new Bicycle("Trek", "Marlin", 2022, true, 18, "Mountain", true, "Carbon"),
+                    new Bicycle("Specialized", "Sirrus", 2020, false, 8, "Hybrid", false, "Steel")
+            );
+
+            Bicycle.processBicycles(bicycles);
+
+            //5.
+            List<String> features = Arrays.asList("LED Headlight", "Bluetooth Connectivity", "LED Taillight");
+            ElectricScooter scooter = new ElectricScooter("Xiaomi", "M365", 2023, 45, 25, 50, true, true, features);
+            scooter.processAndPrintFeatures();
+
+            //6.
+            List<Boat> boats = Arrays.asList(
+                    new Boat("Beneteau", "Oceanis", 2020, 30, 8, 6, "Diesel", true, BoatType.SAILBOAT),
+                    new Boat("Jeanneau", "Sun Odyssey", 2021, 33, 6, 6, "Gasoline", true, BoatType.SAILBOAT),
+                    new Boat("Sea Ray", "SLX 400", 2022, 40, 4, 8, "Diesel", false, BoatType.FISHINGBOAT)
+            );
+            Boat.processAndPrintBoats(boats); // Call method
+
+            //7.
+            List<Car> cars = Arrays.asList(
+                    new Car("Toyota", "Corolla", 2021, 4, "Blue", "Petrol", true, false, 180, TransmissionType.AUTOMATIC),
+                    new Car("Honda", "Civic", 2020, 4, "Red", "Diesel", true, true, 200, TransmissionType.MANUAL),
+                    new Car("Ford", "Mustang", 2022, 2, "Black", "Petrol", true, false, 250, TransmissionType.AUTOMATIC)
+            );
+            Car.processAndPrintPetrolCars(cars);
+
 
         } catch (InvalidYearException e) {
             logger.error("An error occurred while creating a vehicle: " + e.getMessage(), e);

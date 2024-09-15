@@ -6,6 +6,9 @@ import org.example.exceptions.NegativeAttributeException;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 public class Boat extends Vehicle
 {
     // Attributes
@@ -18,7 +21,7 @@ public class Boat extends Vehicle
     private BoatType boatType; // Enum
 
     // Constructor
-    public Boat(String brand, String model, int year, int maxSpeed, int length, int passengerCapacity, String fuelType, boolean hasNavigationSystem,BoatType boatType) throws InvalidYearException {
+    public Boat(String brand, String model, int year, int maxSpeed, int length, int passengerCapacity, String fuelType, boolean hasNavigationSystem, BoatType boatType) throws InvalidYearException {
         super(brand, model, year);
         this.maxSpeed = maxSpeed;
         this.length = length;
@@ -27,6 +30,7 @@ public class Boat extends Vehicle
         this.hasNavigationSystem = hasNavigationSystem;
         this.boatType = boatType;
     }
+
 
     // Getter and setter
     public int getMaxSpeed() {
@@ -86,4 +90,15 @@ public class Boat extends Vehicle
         }
         this.length = length;
     }
+
+    // 6.Filters boats that have a navigation system and can accommodate at least 6 passengers and then prints their descriptions
+    public static void processAndPrintBoats(List<Boat> boats) {
+        List<String> boatsWithFeatures = boats.stream()
+                .filter(b -> b.isHasNavigationSystem() && b.getPassengerCapacity() >= 6) // Use the getter method
+                .map(Boat::toString) // Map to the string representation of the boat
+                .collect(Collectors.toList()); // Collect into a list
+
+        boatsWithFeatures.forEach(boat -> logger.info(boat)); // Print each boat's information
+    }
+
 }

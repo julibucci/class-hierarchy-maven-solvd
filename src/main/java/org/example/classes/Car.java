@@ -2,12 +2,15 @@ package org.example.classes;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.example.enums.FuelType;
 import org.example.enums.TransmissionType;
 import org.example.exceptions.ExceedingMaxSpeedException;
 import org.example.exceptions.InvalidYearException;
 
 import org.example.interfaces.Convertible;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
 public class Car extends Vehicle implements Convertible
 {
     private static final Logger logger = LogManager.getLogger(Car.class);
@@ -138,5 +141,16 @@ public class Car extends Vehicle implements Convertible
 
     public String getTransmissionDescription() {
         return this.transmissionType.getDescription();
+    }
+
+    //7. Method to process and print cars
+    public static void processAndPrintPetrolCars(List<Car> cars)
+    {
+        List<String> petrolCars = cars.stream()
+                .filter(car -> car.getFuelType().equalsIgnoreCase("Petrol")) // Filter cars with 'Petrol' fuel type
+                .map(Car::toString) // Map each car to its string representation
+                .collect(Collectors.toList()); // Collect the results into a list
+
+        petrolCars.forEach(carDetail -> System.out.println(carDetail)); // Print details
     }
 }

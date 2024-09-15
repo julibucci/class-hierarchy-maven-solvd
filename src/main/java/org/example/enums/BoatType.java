@@ -4,7 +4,7 @@ public enum BoatType
 {
     //Atributos
     SAILBOAT("Sailboat", 6),
-    FISHING_BOAT("Fishing Boat", 8);
+    FISHINGBOAT("Fishing Boat", 8);
 
     private final String name;
     private final int passengerCapacity;

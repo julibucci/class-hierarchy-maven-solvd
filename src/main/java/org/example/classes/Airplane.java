@@ -17,12 +17,12 @@ public class Airplane extends Vehicle implements Flyable
     private HashSet<String> passengers;
 
     // Constructor
-    public Airplane(String brand, String model, int year, int altitude, int passengerCapacity, String fuelType, CustomLinkedList<String> passengers) throws InvalidYearException {
+    public Airplane(String brand, String model, int year, int altitude, int passengerCapacity, String fuelType, HashSet<String> passengers) throws InvalidYearException {
         super(brand, model, year);
         this.altitude = altitude;
         this.passengerCapacity = passengerCapacity;
         this.fuelType = fuelType;
-        this.passengers = new HashSet<>();
+        this.passengers = new HashSet<>(passengers);
     }
 
 // Getter and setter
@@ -94,4 +94,12 @@ public class Airplane extends Vehicle implements Flyable
     public void removePassenger(String passenger) {
         passengers.remove(passenger);
     }
+
+    // Print passengers in upper case --> collection streaming , non-terminal
+    public void printPassengersInUpperCase() {
+        passengers.stream()
+                .map(String::toUpperCase)
+                .forEach(passenger -> logger.info("Passenger in uppercase: " + passenger));
+    }
+
 }

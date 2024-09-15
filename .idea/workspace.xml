@@ -10,16 +10,9 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/classes/Airplane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/classes/Airplane.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/classes/Bicycle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/classes/Bicycle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/classes/Boat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/classes/Boat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/classes/Bus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/classes/Bus.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/classes/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/classes/Car.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/classes/CustomLinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/classes/CustomLinkedList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/classes/ElectricScooter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/classes/ElectricScooter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/classes/Helicopter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/classes/Helicopter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/classes/Motorcycle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/classes/Motorcycle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/classes/Truck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/classes/Truck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/classes/Vehicle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/classes/Vehicle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/classes/VehicleFileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/classes/VehicleFileManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/classes/WordCount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/classes/WordCount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/enums/BoatType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/enums/BoatType.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
