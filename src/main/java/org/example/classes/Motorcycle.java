@@ -1,5 +1,7 @@
 package org.example.classes;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.example.enums.VehicleSpeed;
 import org.example.exceptions.InvalidYearException;
 import java.util.ArrayList;
@@ -9,6 +11,7 @@ import org.example.exceptions.ExceedingMaxSpeedException;
 public class Motorcycle extends Vehicle
 {
     // Attributes
+    private static final Logger logger = LogManager.getLogger(Motorcycle.class);
     private int engineCapacity;
     private String type;
     private boolean hasWindshield;
@@ -17,7 +20,7 @@ public class Motorcycle extends Vehicle
     private ArrayList<String> accessories;
     private int maxSpeed;
 
-
+// Constructor
     public Motorcycle(String brand, String model, int year, int engineCapacity, String type, boolean hasWindshield, String color, boolean hasABS, ArrayList<String> accessories, int maxSpeed) throws InvalidYearException {
         super(brand, model, year);
         this.engineCapacity = engineCapacity;
@@ -29,6 +32,7 @@ public class Motorcycle extends Vehicle
         setMaxSpeed(maxSpeed);
     }
 
+    // getter y setter
     public int getEngineCapacity() {
         return engineCapacity;
     }
@@ -103,7 +107,7 @@ public class Motorcycle extends Vehicle
 
     @Override
     public void start() {
-        System.out.println("The motorcycle is starting.");
+        logger.info("The motorcycle is starting.");
     }
 
     // method toString

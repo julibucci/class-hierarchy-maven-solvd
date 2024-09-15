@@ -1,5 +1,7 @@
 package org.example.classes;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.example.enums.FuelType;
 import org.example.enums.TransmissionType;
 import org.example.exceptions.ExceedingMaxSpeedException;
@@ -8,6 +10,7 @@ import org.example.exceptions.InvalidYearException;
 import org.example.interfaces.Convertible;
 public class Car extends Vehicle implements Convertible
 {
+    private static final Logger logger = LogManager.getLogger(Car.class);
     // Attributes
     protected int doors;
     protected String color;
@@ -73,16 +76,16 @@ public class Car extends Vehicle implements Convertible
 
     @Override
     public void start() {
-        System.out.println("The car is starting.");
+        logger.info("The car is starting.");
     }
 
     // Method overloading
     public void accelerate() {
-        System.out.println("The car is accelerating.");
+        logger.info("The car is accelerating.");
     }
 
     public void accelerate(int speed) {
-        System.out.println("The car is accelerating to " + speed + " km/h.");
+        logger.info("The car is accelerating to " + speed + " km/h.");
     }
 
     // Method toString
@@ -101,24 +104,24 @@ public class Car extends Vehicle implements Convertible
     @Override
     public void openRoof() {
         if (hasSunroof && !isRoofOpen) {
-            System.out.println("Opening the cars roof.");
+            logger.info("Opening the cars roof.");
             isRoofOpen = true;
         } else if (isRoofOpen) {
-            System.out.println("The roof is already open.");
+            logger.info("The roof is already open.");
         } else {
-            System.out.println("This car doesn't have a sunroof.");
+            logger.info("This car doesn't have a sunroof.");
         }
     }
 
     @Override
     public void closeRoof() {
         if (hasSunroof && isRoofOpen) {
-            System.out.println("Closing the cars roof.");
+            logger.info("Closing the cars roof.");
             isRoofOpen = false;
         } else if (!isRoofOpen) {
-            System.out.println("The roof is already closed.");
+            logger.info("The roof is already closed.");
         } else {
-            System.out.println("This car doesn't have a sunroof.");
+            logger.info("This car doesn't have a sunroof.");
         }
     }
 
@@ -129,7 +132,7 @@ public class Car extends Vehicle implements Convertible
             }
             this.maxSpeed = maxSpeed;
         } catch (ExceedingMaxSpeedException e) {
-            System.out.println(e.getMessage());
+            logger.error(e.getMessage(),e);
         }
     }
 

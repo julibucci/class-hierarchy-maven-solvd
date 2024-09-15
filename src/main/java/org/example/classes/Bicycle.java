@@ -1,15 +1,20 @@
 package org.example.classes;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.example.exceptions.InvalidYearException;
 
 import org.example.interfaces.Pedalable;
 public class Bicycle extends Vehicle implements Pedalable
 {
+    // Attributes
+    private static final Logger logger = LogManager.getLogger(Bicycle.class);
     private boolean hasGear;
     private int numberOfGears;
     private String type;
     private boolean hasSuspension;
     private String frameMaterial;
 
+    // Constructor
     public Bicycle(String brand, String model, int year, boolean hasGear, int numberOfGears, String type, boolean hasSuspension, String frameMaterial) throws InvalidYearException {
         super(brand, model, year);
         this.hasGear = hasGear;
@@ -19,6 +24,7 @@ public class Bicycle extends Vehicle implements Pedalable
         this.frameMaterial = frameMaterial;
     }
 
+    // Getter and setter
     public boolean hasGear() {
         return hasGear;
     }
@@ -59,9 +65,10 @@ public class Bicycle extends Vehicle implements Pedalable
         this.frameMaterial = frameMaterial;
     }
 
+    // Start method
     @Override
     public void start() {
-        System.out.println("The bicycle is ready to ride.");
+        logger.info("The bicycle is ready to ride.");
     }
 
     // toString method
@@ -79,12 +86,12 @@ public class Bicycle extends Vehicle implements Pedalable
     // Interface implementation
     @Override
     public void pedal() {
-        System.out.println("Pedaling the bicycle.");
+        logger.info("Pedaling the bicycle.");
     }
 
     @Override
     public void brake() {
-        System.out.println("Applying the bicycle brake.");
+        logger.info("Applying the bicycle brake.");
     }
 
 

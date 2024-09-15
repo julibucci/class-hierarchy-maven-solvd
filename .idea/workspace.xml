@@ -5,19 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8cb68f72-8ada-43d6-b281-c88ad2185c19" name="Changes" comment="Use 5 lambda functions from the java.util.function package">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/enums/BoatType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/enums/FuelType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/enums/HelicopterType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/enums/TransmissionType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/enums/VehicleSpeed.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/classes/Airplane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/classes/Airplane.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/classes/Bicycle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/classes/Bicycle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/classes/Boat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/classes/Boat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/classes/Bus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/classes/Bus.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/classes/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/classes/Car.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/classes/CustomLinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/classes/CustomLinkedList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/classes/ElectricScooter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/classes/ElectricScooter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/classes/Helicopter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/classes/Helicopter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/classes/Motorcycle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/classes/Motorcycle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/classes/Truck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/classes/Truck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/classes/Vehicle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/classes/Vehicle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/classes/VehicleFileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/classes/VehicleFileManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/classes/WordCount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/classes/WordCount.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,7 +121,15 @@
       <option name="project" value="LOCAL" />
       <updated>1725645708879</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Create 5 Enums: BoatType, FuelType,TransmissionType,HelicopterType and VehicleSpeed">
+      <option name="closed" value="true" />
+      <created>1726436462693</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1726436462693</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -138,6 +148,7 @@
     <MESSAGE value="Add 2 plugins. Maven Surefire Plugin and Maven Compiler Plugin" />
     <MESSAGE value="Add 2 plugins and build a jar File. Maven Surefire Plugin and Maven Compiler Plugin" />
     <MESSAGE value="Use of StringUtils and FileUtils" />
-    <option name="LAST_COMMIT_MESSAGE" value="Use of StringUtils and FileUtils" />
+    <MESSAGE value="Create 5 Enums: BoatType, FuelType,TransmissionType,HelicopterType and VehicleSpeed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create 5 Enums: BoatType, FuelType,TransmissionType,HelicopterType and VehicleSpeed" />
   </component>
 </project>

@@ -8,6 +8,7 @@ import org.apache.logging.log4j.LogManager;
 
 public class Boat extends Vehicle
 {
+    // Attributes
     private static final Logger logger = LogManager.getLogger(Boat.class);
     private int maxSpeed;
     private int length;
@@ -16,6 +17,7 @@ public class Boat extends Vehicle
     private boolean hasNavigationSystem;
     private BoatType boatType; // Enum
 
+    // Constructor
     public Boat(String brand, String model, int year, int maxSpeed, int length, int passengerCapacity, String fuelType, boolean hasNavigationSystem,BoatType boatType) throws InvalidYearException {
         super(brand, model, year);
         this.maxSpeed = maxSpeed;
@@ -26,6 +28,7 @@ public class Boat extends Vehicle
         this.boatType = boatType;
     }
 
+    // Getter and setter
     public int getMaxSpeed() {
         return maxSpeed;
     }
@@ -69,6 +72,8 @@ public class Boat extends Vehicle
     public void setBoatType(BoatType boatType) {
         this.boatType = boatType;
     }
+
+    // Start method
     @Override
     public void start() {
         logger.info("The boat is starting.");

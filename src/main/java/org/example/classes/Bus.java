@@ -1,5 +1,7 @@
 package org.example.classes;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.example.exceptions.ExceedingPassengerCapacityException;
 import org.example.exceptions.InvalidYearException;
 
@@ -7,12 +9,15 @@ import java.util.ArrayList;
 
 public class Bus extends Vehicle
 {
+    // Attributes
+    private static final Logger logger = LogManager.getLogger(Bus.class);
     private int seatingCapacity;
     private int numberOfDoors;
     private String fuelType;
     private ArrayList<String> routes;
     private int passengerCapacity;
 
+    // Constructor
     public Bus(String brand, String model, int year, int seatingCapacity, int numberOfDoors, String fuelType, CustomLinkedList<String> routes,int passengerCapacity) throws InvalidYearException {
         super(brand, model, year);
         this.seatingCapacity = seatingCapacity;
@@ -22,6 +27,7 @@ public class Bus extends Vehicle
         this.passengerCapacity = passengerCapacity;
     }
 
+    // Getter and setter
     public int getSeatingCapacity() {
         return seatingCapacity;
     }
@@ -57,9 +63,10 @@ public class Bus extends Vehicle
         this.passengerCapacity = passengerCapacity;
     }
 
+    // Method start
     @Override
     public void start() {
-        System.out.println("The bus is starting.");
+        logger.info("The bus is starting.");
     }
 
     // Exception
