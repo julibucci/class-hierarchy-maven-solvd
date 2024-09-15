@@ -1,6 +1,8 @@
 package org.example.classes;
 
 public class CustomLinkedList<T> {
+
+    // Attributes
     private Node<T> head;// referencia al primer nodo en la lista
     private int size;//tamaño de la lista
 

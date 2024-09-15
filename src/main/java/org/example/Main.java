@@ -15,12 +15,12 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.function.*;
+import org.example.interfaces.Electric;
 
 public class Main {
     public static Logger logger;
 
     public static void main(String[] args) {
-
         // Configuration of logger
         File log4j2File = new File("C:\\Users\\julie\\OneDrive\\Escritorio\\Exercises - Solvd\\class hierarchy- solvd\\src\\resources\\log4j2.properties");
         System.setProperty("log4j2.configurationFile", log4j2File.toURI().toString());
@@ -36,7 +36,7 @@ public class Main {
         WordCount wordCount = new WordCount();
 
         try {
-            // Configuración enums
+            // Configuration of the enums
             TransmissionType carTransmission = TransmissionType.AUTOMATIC;
             FuelType truckFuelType = FuelType.DIESEL;
             HelicopterType helicopterType = HelicopterType.COMMERCIAL;
@@ -46,7 +46,7 @@ public class Main {
             airplanePassengers.add("Jane Smith");
             airplane = new Airplane("Boeing", "747", 2022, 35000, 900, "Jet Fuel", airplanePassengers);
 
-            // Supplier<String> --> Proporciona el modelo del avión
+            // Supplier<String> --> Provides the model of the airplane
             Vehicle finalAirplane = airplane;
             Supplier<String> airplaneModelSupplier = () -> finalAirplane.getModel();
             logger.info("Airplane model: " + airplaneModelSupplier.get());
@@ -56,7 +56,7 @@ public class Main {
             busRoutes.add("Route 2");
             bus = new Bus("Volvo", "B11R", 2021, 50, 2, "Diesel", busRoutes, 100);
 
-            // Predicate<Vehicle> --> Evalúa si el bus tiene una capacidad mayor a 40 pasajeros
+            // Predicate<Vehicle> --> Evaluate if the bus has a capacity greater than 40 passengers
             Predicate<Vehicle> busCapacityCheck = v -> ((Bus) v).getPassengerCapacity() > 40;
             logger.info("Bus has high capacity: " + busCapacityCheck.test(bus));
 
@@ -66,7 +66,7 @@ public class Main {
 
             helicopter = new Helicopter("Bell", "407", 2019, 6, "Aviation Gasoline", helicopterMaintenanceTasks, helicopterType);
 
-            // Consumer<Vehicle> --> Imprime los detalles del helicóptero
+            // Consumer<Vehicle> --> Print helicopter details
             Consumer<Vehicle> printHelicopterDetails = h -> logger.info(h.toString());
             printHelicopterDetails.accept(helicopter);
 
@@ -75,32 +75,46 @@ public class Main {
             initialCargo.put("Furniture", 200);
             truck = new Truck("Scania", "R450", 2020, 10000, 2, truckFuelType, initialCargo);
 
-            // BiFunction<Integer, Integer, Integer>--> Calcula el peso total del camión y su carga
+            // BiFunction<Integer, Integer, Integer>--> Calculate the total weight of the truck and its load
             BiFunction<Integer, Integer, Integer> calculateTotalWeight = (truckWeight, cargoWeight) -> truckWeight + cargoWeight;
             logger.info("Total truck weight: " + calculateTotalWeight.apply(10000, 500));
 
-            // Creación de una motocicleta con el enum VehicleSpeed
+            // Creating a motorcycle with the VehicleSpeed enum
             ArrayList<String> initialAccessories = new ArrayList<>();
             initialAccessories.add("Saddlebags");
             initialAccessories.add("GPS");
             motorcycle = new Motorcycle("Harley-Davidson", "Street 750", 2018, 750, "Cruiser", true, "Black", true, initialAccessories, 120);
 
-            // Function<Vehicle, String> --> Devuelve una descripción del vehículo
+            // Function<Vehicle, String> --> Returns a description of the vehicle
             Function<Vehicle, String> getVehicleDescription = v -> "Vehicle: " + v.getBrand() + " " + v.getModel() + " (" + v.getYear() + ")";
             logger.info(getVehicleDescription.apply(motorcycle));
 
-            // Creación de un barco con el enum BoatType
+            // Creacion de los lambda functions con generics
+            // Function<Vehicle, String> --> Convert vehicle to description
+            Function<Vehicle, String> vehicleToDescription = vehicle ->
+                    "Vehicle: " + vehicle.getBrand() + " " + vehicle.getModel() + " (" + vehicle.getYear() + ")";
+            logger.info(vehicleToDescription.apply(motorcycle));
+
+            // Predicate<Vehicle> --> Check if the vehicle is electric
+            Predicate<Vehicle> isElectric = vehicle -> vehicle instanceof Electric;
+            logger.info("Is the motorcycle electric? " + isElectric.test(motorcycle));
+
+            // BiFunction<Integer, Vehicle, Integer> --> Calculate vehicle age
+            BiFunction<Integer, Vehicle, Integer> calculateVehicleAge = (currentYear, vehicle) ->
+                    currentYear - vehicle.getYear();
+            logger.info("Age of the motorcycle: " + calculateVehicleAge.apply(2024, motorcycle));
+
+            // Creating a boat with the BoatType enum
             BoatType boatType = BoatType.SAILBOAT;
             Boat boat = new Boat("Beneteau", "Oceanis", 2020, 30, 10, 6, "Diesel", true, boatType);
             logger.info("Boat type: " + boat.getBoatType().getName());
-            logger.info("Can the boat accommodate 5 passengers? " + boat.getBoatType().canAccommodate(5));
 
-            // Car con TransmissionType
+            // Car with TransmissionType
             Car car = new Car("Toyota", "Corolla", 2021, 4, "Blue", "Diesel", true, false, 180, TransmissionType.AUTOMATIC);
             car.setMaxSpeed(180);
             logger.info("Transmission Type of the Car: " + car.getTransmissionDescription());
 
-            // Guardar detalles de vehículos en archivos
+            // Save vehicle details to files
             fileManager.saveVehicleDetails(airplane, "airplane_details.txt");
             fileManager.saveVehicleDetails(bus, "bus_details.txt");
             fileManager.saveVehicleDetails(helicopter, "helicopter_details.txt");
@@ -108,7 +122,7 @@ public class Main {
             fileManager.saveVehicleDetails(motorcycle, "motorcycle_details.txt");
             fileManager.saveVehicleDetails(boat, "boat_details.txt");
 
-            // Contar palabras únicas en los archivos de detalles de vehículos
+            // Count unique words in vehicle detail files
             wordCount.countUniqueWordsInFile("airplane_details.txt", "airplane_details_word_count.txt");
             wordCount.countUniqueWordsInFile("bus_details.txt", "bus_details_word_count.txt");
             wordCount.countUniqueWordsInFile("helicopter_details.txt", "helicopter_details_word_count.txt");
@@ -116,7 +130,7 @@ public class Main {
             wordCount.countUniqueWordsInFile("motorcycle_details.txt", "motorcycle_details_word_count.txt");
             wordCount.countUniqueWordsInFile("boat_details.txt", "boat_details_word_count.txt");
 
-            // Cargar detalles de vehículos desde archivos
+            // Load vehicle details from files
             fileManager.loadVehicleDetails("airplane_details.txt");
             fileManager.loadVehicleDetails("bus_details.txt");
             fileManager.loadVehicleDetails("helicopter_details.txt");

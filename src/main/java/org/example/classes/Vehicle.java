@@ -1,10 +1,13 @@
 package org.example.classes;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.example.exceptions.InvalidYearException;
 import java.util.Objects;
 
 public abstract class Vehicle
 {
     // Attributes
+    private static final Logger logger = LogManager.getLogger(Vehicle.class);
     protected String brand;
     protected String model;
     protected int year;
@@ -13,7 +16,7 @@ public abstract class Vehicle
 
     // Static block
     static {
-        System.out.println("Static block of Vehicle class executed.");
+        logger.info("Static block of Vehicle class executed.");
         vehicleCount = 0; // Initialize static variable
     }
 
@@ -92,10 +95,10 @@ public abstract class Vehicle
     // Final method
     public final void printVehicleDetails()
     {
-        System.out.println("Vehicle Details:");
-        System.out.println("Brand: " + brand);
-        System.out.println("Model: " + model);
-        System.out.println("Year: " + year);
+        logger.info("Vehicle Details:");
+        logger.info("Brand: " + brand);
+        logger.info("Model: " + model);
+        logger.info("Year: " + year);
     }
     // Static method
     public static int getVehicleCount() {

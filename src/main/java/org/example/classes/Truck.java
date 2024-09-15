@@ -10,7 +10,7 @@ import org.example.interfaces.Transportable;
 
 public class Truck extends Vehicle implements Transportable
 {
-    private static final Logger logger = LogManager.getLogger(Helicopter.class);
+    private static final Logger logger = LogManager.getLogger(Truck.class);
     // Attributes
     private int loadCapacity;
     private int cabinSize;

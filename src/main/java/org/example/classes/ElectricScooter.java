@@ -1,15 +1,20 @@
 package org.example.classes;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.example.exceptions.InvalidYearException;
 
 import org.example.interfaces.Electric;
 public final class ElectricScooter extends Vehicle implements Electric
 {
+    // Attributes
+    private static final Logger logger = LogManager.getLogger(ElectricScooter.class);
     private int batteryLife;
     private int maxSpeed;
     private int range;
     private boolean hasLights;
     private boolean hasBluetooth;
 
+    // Constructor
     public ElectricScooter(String brand, String model, int year, int batteryLife, int maxSpeed, int range, boolean hasLights, boolean hasBluetooth) throws InvalidYearException {
         super(brand, model, year);
         this.batteryLife = batteryLife;
@@ -19,6 +24,7 @@ public final class ElectricScooter extends Vehicle implements Electric
         this.hasBluetooth = hasBluetooth;
     }
 
+    // Getter and Setter
     public int getBatteryLife() {
         return batteryLife;
     }
@@ -59,13 +65,14 @@ public final class ElectricScooter extends Vehicle implements Electric
         this.hasBluetooth = hasBluetooth;
     }
 
+    // Method start
     @Override
     public void start() {
-        System.out.println("The electric scooter is starting.");
+        logger.info("The electric scooter is starting.");
     }
 
     // Interface implementation
     public void chargeBattery() {
-        System.out.println("Charging the battery.");
+        logger.info("Charging the battery.");
     }
 }

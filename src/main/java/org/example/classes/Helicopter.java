@@ -9,14 +9,17 @@ import java.util.LinkedList;
 import java.util.Objects;
 import java.util.Queue;
 
-public class Helicopter extends Vehicle {
+public class Helicopter extends Vehicle
+{
+    // Attributes
+    private static final Logger logger = LogManager.getLogger(Helicopter.class);
     private int passengerCapacity;
     private String fuelType;
     private Queue<String> maintenanceTasks;
     private HelicopterType helicopterType;
 
-    private static final Logger logger = LogManager.getLogger(Helicopter.class);
 
+    // Constructor
     public Helicopter(String brand, String model, int year, int passengerCapacity, String fuelType, Queue<String> maintenanceTasks, HelicopterType helicopterType) throws InvalidYearException {
         super(brand, model, year);
         this.passengerCapacity = passengerCapacity;
@@ -25,6 +28,7 @@ public class Helicopter extends Vehicle {
         this.helicopterType = helicopterType;
     }
 
+    // Getter y setter
     public int getPassengerCapacity() {
         return passengerCapacity;
     }
@@ -61,11 +65,13 @@ public class Helicopter extends Vehicle {
         return helicopterType.getMaxAltitude();
     }
 
+    // Start method
     @Override
     public void start() {
         logger.info("The helicopter is starting.");
     }
 
+    // Method toString
     @Override
     public String toString() {
         return super.toString() + "Helicopter{" +
@@ -77,11 +83,13 @@ public class Helicopter extends Vehicle {
                 '}';
     }
 
+    // hashCode method
     @Override
     public int hashCode() {
         return Objects.hash(super.hashCode(), passengerCapacity, fuelType, maintenanceTasks, helicopterType);
     }
 
+    // Equals method
     @Override
     public boolean equals(Object obj) {
         if (!super.equals(obj)) return false;
