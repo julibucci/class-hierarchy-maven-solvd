@@ -1,35 +1,28 @@
 package org.example.classes;
+
+import org.example.enums.HelicopterType;
 import org.example.exceptions.InvalidYearException;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.LinkedList;
 import java.util.Objects;
 import java.util.Queue;
 
-public class Helicopter extends Vehicle
-{
-    private int rotorSpeed;
+public class Helicopter extends Vehicle {
     private int passengerCapacity;
-    private int maxAltitude;
     private String fuelType;
-    private boolean hasAutopilot;
     private Queue<String> maintenanceTasks;
+    private HelicopterType helicopterType;
 
-    public Helicopter(String brand, String model, int year, int rotorSpeed, int passengerCapacity, int maxAltitude, String fuelType, boolean hasAutopilot,Queue<String> maintenanceTasks) throws InvalidYearException {
+    private static final Logger logger = LogManager.getLogger(Helicopter.class);
+
+    public Helicopter(String brand, String model, int year, int passengerCapacity, String fuelType, Queue<String> maintenanceTasks, HelicopterType helicopterType) throws InvalidYearException {
         super(brand, model, year);
-        this.rotorSpeed = rotorSpeed;
         this.passengerCapacity = passengerCapacity;
-        this.maxAltitude = maxAltitude;
         this.fuelType = fuelType;
-        this.hasAutopilot = hasAutopilot;
-        this.maintenanceTasks = new LinkedList<>();
-    }
-
-    public int getRotorSpeed() {
-        return rotorSpeed;
-    }
-
-    public void setRotorSpeed(int rotorSpeed) {
-        this.rotorSpeed = rotorSpeed;
+        this.maintenanceTasks = new LinkedList<>(maintenanceTasks);
+        this.helicopterType = helicopterType;
     }
 
     public int getPassengerCapacity() {
@@ -40,28 +33,12 @@ public class Helicopter extends Vehicle
         this.passengerCapacity = passengerCapacity;
     }
 
-    public int getMaxAltitude() {
-        return maxAltitude;
-    }
-
-    public void setMaxAltitude(int maxAltitude) {
-        this.maxAltitude = maxAltitude;
-    }
-
     public String getFuelType() {
         return fuelType;
     }
 
     public void setFuelType(String fuelType) {
         this.fuelType = fuelType;
-    }
-
-    public boolean isHasAutopilot() {
-        return hasAutopilot;
-    }
-
-    public void setHasAutopilot(boolean hasAutopilot) {
-        this.hasAutopilot = hasAutopilot;
     }
 
     public Queue<String> getMaintenanceTasks() {
@@ -72,42 +49,48 @@ public class Helicopter extends Vehicle
         this.maintenanceTasks = maintenanceTasks;
     }
 
-    @Override
-    public void start() {
-        System.out.println("The helicopter is starting.");
+    public HelicopterType getHelicopterType() {
+        return helicopterType;
     }
 
-    // toString method
+    public void setHelicopterType(HelicopterType helicopterType) {
+        this.helicopterType = helicopterType;
+    }
+
+    public int getMaxAltitude() {
+        return helicopterType.getMaxAltitude();
+    }
+
+    @Override
+    public void start() {
+        logger.info("The helicopter is starting.");
+    }
+
     @Override
     public String toString() {
         return super.toString() + "Helicopter{" +
-                "rotorSpeed=" + rotorSpeed +
-                ", passengerCapacity=" + passengerCapacity +
-                ", maxAltitude=" + maxAltitude +
+                "passengerCapacity=" + passengerCapacity +
                 ", fuelType='" + fuelType + '\'' +
-                ", hasAutopilot=" + hasAutopilot +
+                ", maxAltitude=" + getMaxAltitude() +
                 ", maintenanceTasks=" + maintenanceTasks +
+                ", helicopterType=" + helicopterType +
                 '}';
     }
 
-    // hashCode method
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), rotorSpeed, passengerCapacity, maxAltitude, fuelType, hasAutopilot, maintenanceTasks);
+        return Objects.hash(super.hashCode(), passengerCapacity, fuelType, maintenanceTasks, helicopterType);
     }
 
-    // equals method
     @Override
     public boolean equals(Object obj) {
         if (!super.equals(obj)) return false;
         if (obj == null || getClass() != obj.getClass()) return false;
         Helicopter helicopter = (Helicopter) obj;
-        return rotorSpeed == helicopter.rotorSpeed &&
-                passengerCapacity == helicopter.passengerCapacity &&
-                maxAltitude == helicopter.maxAltitude &&
-                hasAutopilot == helicopter.hasAutopilot &&
+        return passengerCapacity == helicopter.passengerCapacity &&
                 Objects.equals(fuelType, helicopter.fuelType) &&
-                Objects.equals(maintenanceTasks, helicopter.maintenanceTasks);
+                Objects.equals(maintenanceTasks, helicopter.maintenanceTasks) &&
+                helicopterType == helicopter.helicopterType;
     }
 
     // Collection methods
@@ -119,3 +102,4 @@ public class Helicopter extends Vehicle
         return maintenanceTasks.poll();
     }
 }
+

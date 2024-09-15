@@ -4,10 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8cb68f72-8ada-43d6-b281-c88ad2185c19" name="Changes" comment="Use of StringUtils and FileUtils">
+    <list default="true" id="8cb68f72-8ada-43d6-b281-c88ad2185c19" name="Changes" comment="Use 5 lambda functions from the java.util.function package">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/enums/BoatType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/enums/FuelType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/enums/HelicopterType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/enums/TransmissionType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/enums/VehicleSpeed.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/classes/Bus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/classes/Bus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/classes/Boat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/classes/Boat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/classes/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/classes/Car.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/classes/CustomLinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/classes/CustomLinkedList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/classes/Helicopter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/classes/Helicopter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/classes/Motorcycle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/classes/Motorcycle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/classes/Truck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/classes/Truck.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +29,7 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>

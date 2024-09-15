@@ -88,4 +88,6 @@ public class CustomLinkedList<T> {
         sb.append("]");
         return sb.toString();
     }
+
+
 }
