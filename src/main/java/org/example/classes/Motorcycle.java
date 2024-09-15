@@ -1,8 +1,10 @@
 package org.example.classes;
 
+import org.example.enums.VehicleSpeed;
 import org.example.exceptions.InvalidYearException;
 import java.util.ArrayList;
 import java.util.Objects;
+import org.example.exceptions.ExceedingMaxSpeedException;
 
 public class Motorcycle extends Vehicle
 {
@@ -13,9 +15,10 @@ public class Motorcycle extends Vehicle
     private String color;
     private boolean hasABS;
     private ArrayList<String> accessories;
+    private int maxSpeed;
 
 
-    public Motorcycle(String brand, String model, int year, int engineCapacity, String type, boolean hasWindshield, String color, boolean hasABS, ArrayList<String> accessories) throws InvalidYearException {
+    public Motorcycle(String brand, String model, int year, int engineCapacity, String type, boolean hasWindshield, String color, boolean hasABS, ArrayList<String> accessories, int maxSpeed) throws InvalidYearException {
         super(brand, model, year);
         this.engineCapacity = engineCapacity;
         this.type = type;
@@ -23,6 +26,7 @@ public class Motorcycle extends Vehicle
         this.color = color;
         this.hasABS = hasABS;
         this.accessories = new ArrayList<>();
+        setMaxSpeed(maxSpeed);
     }
 
     public int getEngineCapacity() {
@@ -71,6 +75,30 @@ public class Motorcycle extends Vehicle
 
     public void setAccessories(ArrayList<String> accessories) {
         this.accessories = accessories;
+    }
+
+    // Metodo para establecer la velocidad máxima usando el enum
+    public void setMaxSpeed(int maxSpeed) {
+        try {
+            VehicleSpeed selectedSpeed = getVehicleSpeed(maxSpeed);
+            selectedSpeed.checkSpeed(maxSpeed);  // Valida la velocidad máxima con el enum
+            this.maxSpeed = maxSpeed;
+        } catch (ExceedingMaxSpeedException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    // Metodo auxiliar para determinar el rango de velocidad
+    private VehicleSpeed getVehicleSpeed(int speed) {
+        if (speed <= VehicleSpeed.SLOW.getMaxSpeed()) {
+            return VehicleSpeed.SLOW;
+        } else if (speed <= VehicleSpeed.MODERATE.getMaxSpeed()) {
+            return VehicleSpeed.MODERATE;
+        } else if (speed <= VehicleSpeed.FAST.getMaxSpeed()) {
+            return VehicleSpeed.FAST;
+        } else {
+            return VehicleSpeed.EXTREME;
+        }
     }
 
     @Override
