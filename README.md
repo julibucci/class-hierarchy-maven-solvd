@@ -133,7 +133,22 @@ BiFunction: Calculates total truck weight and vehicle age.
 Function: Provides vehicle descriptions.
 
 Reflection
-Reflection Class: Handles reflection operations, including creating instances of classes and invoking methods dynamically.
+Class: Handles reflection operations, including creating instances of classes and invoking methods dynamically.
+
+Key Methods
+createInstance(Class<?> clazz, Object... args)
+Description: Creates a new instance of the specified class using reflection.
+Parameters:
+myClass: The class type to instantiate.
+args: Constructor parameters for the class.
+Returns: An instance of the specified class, or null if instantiation fails.
+invokeMethod(Object instance, String methodName, Object... args)
+
+Description: Invokes a method on a given object instance using reflection.
+Parameters:
+instance: The object on which to invoke the method.
+methodName: The name of the method to invoke.
+args: Parameters for the method.
 
 Utility Classes
 StringUtils: Contains static methods for string manipulation.
