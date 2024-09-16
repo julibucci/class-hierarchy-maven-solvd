@@ -122,8 +122,7 @@ Usage: Thrown when negative attributes are found in any class that uses them.
 5. UnsupportedFuelTypeException
 Usage: Thrown when the fuel type is unsupported in the Airplane class.
 
-Abstract Class
--Vehicle
+Abstract Class-
 Vehicle is an abstract class because it defines a set of common attributes and methods for all vehicles, but it cannot be instantiated directly. It serves as a base for subclasses that represent specific types of vehicles such as Car, Truck, Airplane, etc.
 
 Lambda Functions
