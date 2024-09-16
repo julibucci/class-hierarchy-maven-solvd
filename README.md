@@ -1,5 +1,4 @@
-﻿# class-hierarchy-maven-solvd
-Vehicle Hierarchy Project
+﻿# Vehicle Hierarchy Project
 This project is a Java implementation that encompasses a vehicle hierarchy, including their specific characteristics, interfaces, custom exceptions, and logging system with Log4j. It also includes usage examples demonstrating logger configuration, exception handling, collection operations, and reflection.
 
 Classes
