@@ -18,7 +18,6 @@ public class Helicopter extends Vehicle
     private Queue<String> maintenanceTasks;
     private HelicopterType helicopterType;
 
-
     // Constructor
     public Helicopter(String brand, String model, int year, int passengerCapacity, String fuelType, Queue<String> maintenanceTasks, HelicopterType helicopterType) throws InvalidYearException {
         super(brand, model, year);
