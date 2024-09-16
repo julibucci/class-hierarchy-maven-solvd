@@ -87,6 +87,7 @@ public class Main {
             logger.info(getVehicleDescription.apply(motorcycle));
 
             // Creacion de los lambda functions con generics
+            logger.info("===== Lambda functions con generics =====");
             // Function<Vehicle, String> --> Convert vehicle to description
             Function<Vehicle, String> vehicleToDescription = vehicle ->
                     "Vehicle: " + vehicle.getBrand() + " " + vehicle.getModel() + " (" + vehicle.getYear() + ")";
@@ -136,6 +137,7 @@ public class Main {
             fileManager.loadVehicleDetails("boat_details.txt");
 
             // Collection streaming
+            logger.info("===== Collection streaming =====");
             HashSet<String> airplanePassengerSet = new HashSet<>();
             airplanePassengerSet.add("Taylor Swift");
             airplanePassengerSet.add("Olivia Rodrigo");
@@ -199,6 +201,24 @@ public class Main {
             );
             Car.processAndPrintPetrolCars(cars);
 
+            logger.info("===== Reflection Utilization =====");
+            helicopterMaintenanceTasks.add("Check rotors");
+            helicopterMaintenanceTasks.add("Oil change");
+
+            Reflection.printClassInfo(Airplane.class); // Imprime información sobre la clase Airplane
+
+            int passengerCapacity = 5;
+            Queue<String> maintenanceTasks = new LinkedList<>();
+            HelicopterType type = HelicopterType.COMMERCIAL;
+
+            Object helicopterInstance = Reflection.createInstance(Helicopter.class, "Brand", "Model", 2023, passengerCapacity, "FuelType", maintenanceTasks, type);
+
+            if (helicopterInstance != null) {
+                logger.info("Created Helicopter using reflection: " + helicopterInstance);
+
+                // Invocar el método "start" de la instancia del helicóptero usando reflexión
+                Reflection.invokeMethod(helicopterInstance, "start");
+            }
 
         } catch (InvalidYearException e) {
             logger.error("An error occurred while creating a vehicle: " + e.getMessage(), e);
@@ -207,5 +227,7 @@ public class Main {
         } catch (Exception e) {
             logger.error("An unexpected error occurred: " + e.getMessage(), e);
         }
+
     }
 }
+
