@@ -3,7 +3,7 @@ This project is a Java implementation that encompasses a vehicle hierarchy, incl
 
 Classes
 1. Vehicle
-Summary: Abstract base class for all vehicles.
+: Abstract base class for all vehicles.
 Attributes:
 brand: The brand of the vehicle.
 model: The model of the vehicle.
@@ -13,7 +13,7 @@ Getters and setters for attributes.
 start(): Abstract method to start the vehicle.
 toString(): Method to represent the vehicle as a string.
 2. Airplane
-Summary: Represents an airplane.
+: Represents an airplane.
 Attributes:
 altitude: Altitude at which the airplane flies.
 passengerCapacity: Passenger capacity.
@@ -25,14 +25,14 @@ start(), takeOff(): Implements Flyable.
 setFuelType(String fuelType): Throws UnsupportedFuelTypeException.
 addPassenger(String passenger), removePassenger(String passenger).
 3. Bus
-Summary: Represents a bus.
+: Represents a bus.
 Attributes:
 passengerCapacity: Passenger capacity.
 routes: Routes of the bus.
 Methods:
 getPassengerCapacity(): Gets the passenger capacity.
 4. Car
-Summary: Represents a car.
+: Represents a car.
 Attributes:
 doors: Number of doors.
 color: Color of the car.
@@ -43,13 +43,13 @@ transmissionType: Type of transmission.
 Methods:
 accelerate(), openRoof(), closeRoof(): Car-specific methods.
 5. ElectricScooter
-Summary: Represents an electric scooter.
+: Represents an electric scooter.
 Attributes:
 features: List of scooter features.
 Methods:
 processAndPrintFeatures(): Processes and prints features.
 6. Helicopter
-Summary: Represents a helicopter.
+: Represents a helicopter.
 Attributes:
 passengerCapacity: Passenger capacity.
 fuelType: Type of fuel.
@@ -59,27 +59,27 @@ Methods:
 start(): Implements Flyable.
 addMaintenanceTask(), removeMaintenanceTask(): Manages maintenance tasks.
 7. Motorcycle
-Summary: Represents a motorcycle.
+: Represents a motorcycle.
 Attributes:
 accessories: Accessories of the motorcycle.
 Methods:
 getAccessories(), setAccessories(): Motorcycle-specific methods.
 8. Boat
-Summary: Represents a boat.
+: Represents a boat.
 Attributes:
 boatType: Type of boat.
 hasNavigationSystem: Indicates if it has a navigation system.
 Methods:
 getBoatType(): Gets the boat type.
 9. Bicycle
-Summary: Represents a bicycle.
+: Represents a bicycle.
 Attributes:
 hasGear: Indicates if it has gears.
 numberOfGears: Number of gears.
 Methods:
 pedal(), brake(): Methods from the Pedalable interface.
 10. Truck
-Summary: Represents a truck.
+: Represents a truck.
 Attributes:
 cargo: Current cargo of the truck.
 Methods:
