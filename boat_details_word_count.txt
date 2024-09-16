@@ -1,0 +1,7 @@
+year: 1
+oceanis: 1
+model: 1
+2020: 1
+beneteau: 1
+brand: 1
+vehicle: 1

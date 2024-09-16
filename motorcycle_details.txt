@@ -1,0 +1,1 @@
+Vehicle{brand='Harley-Davidson', model='Street 750', year=2018}Motorcycle{engineCapacity=750, type='Cruiser', hasWindshield=true, color='Black', hasABS=true, accessories=[]}

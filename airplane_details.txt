@@ -1,0 +1,1 @@
+Vehicle{brand='Boeing', model='747', year=2022}Airplane{altitude=35000, passengerCapacity=900, fuelType='Jet Fuel', passengers=[John Doe, Jane Smith]}

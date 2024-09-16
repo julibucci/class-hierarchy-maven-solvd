@@ -1,0 +1,1 @@
+Vehicle{brand='Bell', model='407', year=2019}Helicopter{passengerCapacity=6, fuelType='Aviation Gasoline', maxAltitude=10000, maintenanceTasks=[Check rotor blades, Change oil], helicopterType=Commercial Helicopter: max weight 7000, max altitude 10000}

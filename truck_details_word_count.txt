@@ -1,0 +1,7 @@
+year: 1
+r450: 1
+model: 1
+scania: 1
+2020: 1
+brand: 1
+vehicle: 1

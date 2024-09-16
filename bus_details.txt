@@ -1,0 +1,1 @@
+Vehicle{brand='Volvo', model='B11R', year=2021}
