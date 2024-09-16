@@ -144,14 +144,16 @@ public class Reflection {
     }
 
     // Get the corresponding wrapper class for primitive types
-    private static Class<?> getWrapperClass(Class<?> clazz) {
-        if (clazz == int.class) return Integer.class;
-        if (clazz == long.class) return Long.class;
-        if (clazz == double.class) return Double.class;
-        if (clazz == float.class) return Float.class;
-        if (clazz == char.class) return Character.class;
-        if (clazz == boolean.class) return Boolean.class;
-        return clazz;
+    // Get the corresponding wrapper class for primitive types
+    private static Class<?> getWrapperClass(Class<?> myClass) {
+        if (myClass == int.class) return Integer.class;
+        if (myClass == long.class) return Long.class;
+        if (myClass == double.class) return Double.class;
+        if (myClass == float.class) return Float.class;
+        if (myClass == char.class) return Character.class;
+        if (myClass == boolean.class) return Boolean.class;
+        return myClass;
     }
+
 
 }
