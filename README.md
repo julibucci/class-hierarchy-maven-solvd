@@ -110,6 +110,7 @@ Methods:
 loadCargo()
 unloadCargo()
 Implemented by: Truck.
+
 Exceptions
 1. ExceedingMaxSpeedException
 Usage: Thrown when the speed exceeds the limit in the VehicleSpeed class.
@@ -121,20 +122,25 @@ Usage: Thrown when the manufacturing year is invalid.
 Usage: Thrown when negative attributes are found in any class that uses them.
 5. UnsupportedFuelTypeException
 Usage: Thrown when the fuel type is unsupported in the Airplane class.
+
 Abstract Class
 Vehicle
 Reason: Vehicle is an abstract class because it defines a set of common attributes and methods for all vehicles, but it cannot be instantiated directly. It serves as a base for subclasses that represent specific types of vehicles such as Car, Truck, Airplane, etc.
+
 Lambda Functions
 Supplier: Provides the model of the airplane.
 Predicate: Checks if the bus has a high capacity.
 Consumer: Prints helicopter details.
 BiFunction: Calculates total truck weight and vehicle age.
 Function: Provides vehicle descriptions.
+
 Reflection
 Reflection Class: Handles reflection operations, including creating instances of classes and invoking methods dynamically.
+
 Utility Classes
 StringUtils: Contains static methods for string manipulation.
 FileUtils: Contains static methods for file operations such as reading and writing.
+
 Usage
 Compile and Run: Ensure that all dependencies are included, and configure your log4j2 properties file accordingly.
 Custom Linked List: The CustomLinkedList class is used in various parts of the project for custom linked list operations.
