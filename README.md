@@ -112,7 +112,7 @@ Implemented by: Truck.
 
 Exceptions
 1. ExceedingMaxSpeedException
-Usage: Thrown when the speed exceeds the limit in the VehicleSpeed class.
+Usage: Thrown when the speed exceeds the limit in the VehicleSpeed class. 
 2. ExceedingPassengerCapacityException
 Usage: Thrown when exceeding passenger capacity in the bus.
 3. InvalidYearException
@@ -123,8 +123,8 @@ Usage: Thrown when negative attributes are found in any class that uses them.
 Usage: Thrown when the fuel type is unsupported in the Airplane class.
 
 Abstract Class
-Vehicle
-Reason: Vehicle is an abstract class because it defines a set of common attributes and methods for all vehicles, but it cannot be instantiated directly. It serves as a base for subclasses that represent specific types of vehicles such as Car, Truck, Airplane, etc.
+-Vehicle
+Vehicle is an abstract class because it defines a set of common attributes and methods for all vehicles, but it cannot be instantiated directly. It serves as a base for subclasses that represent specific types of vehicles such as Car, Truck, Airplane, etc.
 
 Lambda Functions
 Supplier: Provides the model of the airplane.
