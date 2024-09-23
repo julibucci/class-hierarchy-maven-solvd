@@ -122,9 +122,6 @@ Usage: Thrown when negative attributes are found in any class that uses them.
 5. UnsupportedFuelTypeException
 Usage: Thrown when the fuel type is unsupported in the Airplane class.
 
-Abstract Class-
-Vehicle is an abstract class because it defines a set of common attributes and methods for all vehicles, but it cannot be instantiated directly. It serves as a base for subclasses that represent specific types of vehicles such as Car, Truck, Airplane, etc.
-
 Lambda Functions
 Supplier: Provides the model of the airplane.
 Predicate: Checks if the bus has a high capacity.
@@ -150,12 +147,4 @@ instance: The object on which to invoke the method.
 methodName: The name of the method to invoke.
 args: Parameters for the method.
 
-Utility Classes
-StringUtils: Contains static methods for string manipulation.
-FileUtils: Contains static methods for file operations such as reading and writing.
 
-Usage
-Compile and Run: Ensure that all dependencies are included, and configure your log4j2 properties file accordingly.
-Custom Linked List: The CustomLinkedList class is used in various parts of the project for custom linked list operations.
-Process Data: Utilize methods from StringUtils and FileUtils for string and file manipulations.
-Reflection: Use the Reflection class to handle dynamic class and method operations.
