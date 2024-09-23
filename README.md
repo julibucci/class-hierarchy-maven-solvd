@@ -122,12 +122,26 @@ Usage: Thrown when negative attributes are found in any class that uses them.
 5. UnsupportedFuelTypeException
 Usage: Thrown when the fuel type is unsupported in the Airplane class.
 
+Enum 
+BoatType.
+FuelType.
+HelicopterType
+TransmissionType.
+VehicleSpeed.
+
 Lambda Functions
 Supplier: Provides the model of the airplane.
 Predicate: Checks if the bus has a high capacity.
 Consumer: Prints helicopter details.
 BiFunction: Calculates total truck weight and vehicle age.
 Function: Provides vehicle descriptions.
+
+Collection Streaming
+processAndPrintFeatures on class ElectricScooter.
+printPassengersInUpperCase on class Airplane.
+processBicycles on class Bicycle.
+processAndPrintPetrolCars on class Car.
+processAndPrintBoats on class Boat.
 
 Reflection
 Class: Handles reflection operations, including creating instances of classes and invoking methods dynamically.
